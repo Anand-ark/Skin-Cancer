@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% static "img" as baseUrl %}
+{% block title %}Skin{% endblock title %}
+
+{% block content %}
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="container my-3"><br>
+    <h1 style="text-align:center"><p style="color:PeachPuff;">Skin Cancer Detection</p></h1>
+    <h3 style="text-align:center"><p style="color:PeachPuff;">Analyze Your Skin Here</p></h3>
+    <img src="/media/skin.jpg" alt="medical" class="centre" style="width:20% width="300" height="300";><br>
+    <!--<img src="{% static 'images/mal.jpg' %}" alt="medical" class="centre" style="width:20% width="300" height="300";>
+<!--<div style=" position:relative;top:80%; left:41%;">-->
+    <form action="upload2" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <span style=" position:relative;top:80%; left:30%;">
+        <input type="file" class="btn btn-dark" name="image">
+        <!--</span>
+        <span style=" position:relative;top:80%; left:43%;"><br>-->
+        <input type="submit" class="btn btn-light" value="Upload Image">
+        </span>
+        </div>
+        <!--<img src={{filePathname}} alt="imagename">
+                    {{filePathname}}-->
+    </form>
+</div>
+<!--</div>-->
+{% endblock content %}
