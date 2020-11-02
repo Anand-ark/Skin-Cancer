@@ -2,11 +2,11 @@ from django.shortcuts import render, HttpResponse
 from django.core.files.storage import FileSystemStorage
 import numpy as np
 from PIL import Image
-from keras.models import load_model
-from keras.preprocessing import image
+import tensorflow
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 import joblib
 
-import tensorflow as tf
 model =load_model('./models/skin_cancer.h5')
 img_height2,img_width2=224,224 # skincancer
 
